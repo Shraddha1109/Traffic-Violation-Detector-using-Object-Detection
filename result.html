@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<style>
+    body{
+      background-image: url('/static/image/m.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class=container>
+    <div class="row">
+      <div class="text-light ">
+          
+          <i class="fas fa-align-center "><h1><u><b>Result:</b></u></h1></i>
+          <h2><b>Input:</b></h2>
+          <img src="{{filename}}">
+          <br><br><br>
+          <h2><b>Output:</b></h2>
+          <h3>{{data['result'][0]['prediction'][0]['ocr_text'].strip()}}</h3>
+        </div>
+      </div>
+    </div>
+{% endblock %}

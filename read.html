@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<style>
+    body{
+      background-image: url('/static/image/o.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+</style>
+    {% endblock %}
+
+
+   
+   {% block body %} 
+   <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-3">About Us </h1>
+      <p class="lead">Traffic Violation Detector Using Object detection</p>
+      <hr class="my-2">
+      <p>
+          let's take a look at what each term –"COCO".<br> 
+          COCO refers to the"Common Objects in Context"  dataset, the data on which the model was trained on. This collection of images is mostly used for object detection, segmentation, and captioning, and it consists of over 200k labeled images belonging to one of 90 different categories, such as "person," "bus," "zebra," and "tennis racket."
+      
+          TensorFlow Object Detection API is TensorFlow's framework dedicated to training and deploying detection model.
+          
+       </p>
+    </div>
+   </div>
+   
+   {% endblock body %} 

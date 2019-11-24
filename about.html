@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<style>
+    body{
+      background-image: url('/static/image/o.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+</style>
+    {% endblock %}
+
+
+{% block body %} 
+   <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-3">About Us </h1>
+      <p class="lead">Traffic Violation Detector Using Object detection</p>
+      <hr class="my-2">
+      <p>
+          Traffic violation detector are effective tools to help traffic administration to monitor the traffic condition. It can detect traffic violations, such as running red lights, speeding, and vehicle retrogress in real time. A complete traffic violation detection system is realized in Python with OpenCV. 
+          <br>
+          In this project, we will explore TensorFlow, and the Coco model for object detection. In it, I will describe the steps one has to take to load the pre-trained Coco model, how to use it, and how to build a simple implementation to detect objects from a given image. Moreover, besides presenting an example, I want to provide a small preface to what object detection is, explain what's behind the Coco SSD model, and introduce TensorFlow Object Detection API, the library initially used to train the model.
+          <br>
+      </p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Read More</a>
+      </p>
+    </div>
+   </div>
+   
+{% endblock body %} 
