@@ -5,6 +5,8 @@ from flask import Flask,render_template,request,redirect,flash,session
 from models import db,Admin
 from detector import detect_item
 from werkzeug.utils import secure_filename
+from streamer import VideoCamera
+
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 app = Flask(__name__)
@@ -13,6 +15,7 @@ app.secret_key = "my college "
 db.init_app(app)
 db.create_all(app=app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 
 @app.route('/')
 def index():
