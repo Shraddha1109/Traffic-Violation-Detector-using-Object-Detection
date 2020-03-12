@@ -7,21 +7,66 @@
       background-size: cover;
       background-repeat: no-repeat;
     }
+
+    .container{
+      background-color: rgba(255,255,255,0.98);
+    }
 </style>
 {% endblock %}
 
 {% block body %}
-<div class=container>
-    <div class="row">
-      <div class="text-light ">
-          
-          <i class="fas fa-align-center "><h1><u><b>Result:</b></u></h1></i>
-          <h2><b>Input:</b></h2>
-          <img src="{{filename}}">
-          <br><br><br>
-          <h2><b>Output:</b></h2>
-          <h3>{{data['result'][0]['prediction'][0]['ocr_text'].strip()}}</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Number Place Recognition</h3>
+          <p class="card-text">Selected Image</p>
+          <img src="{{filename}}" alt="image not found {{filename}}" class="card-img">
         </div>
       </div>
     </div>
+<div class="col-sm-6">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Results of AI Model</h4>
+        <p class="card-text">prediction details</p>
+    </div>
+    <ul class="list-group list-group-flush">
+    <li class="list-group-item">number : {{data['result'][0]['prediction'][0]['ocr_text'].strip()}}</li>
+    <li class="list-group-item">confidence : {{data['result'][0]['prediction'][0]['score']}}</li>
+    <li class="list-group-item">xmin : {{data['result'][0]['prediction'][0]['xmin']}}</li>
+    <li class="list-group-item">xmax : {{data['result'][0]['prediction'][0]['xmax']}}</li>
+    <li class="list-group-item">ymin : {{data['result'][0]['prediction'][0]['ymin']}}</li>
+    <li class="list-group-item">ymax : {{data['result'][0]['prediction'][0]['ymax']}}</li>
+    </ul>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h3 class="card-title">Number Place Recognition</h3>
+                    <p class="card-text">Selected Image</p>
+                    <img src="{{filename}}" alt="image not found {{filename}}" class="card-img">
+    </div>
+  </div>
+</div>
+                <div class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">Results of AI Model</h4>
+                      <p class="card-text">prediction details</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">number : {{data['result'][0]['prediction'][0]['ocr_text'].strip()}}</li>
+                      <li class="list-group-item">confidence : {{data['result'][0]['prediction'][0]['score']}}</li>
+                      <li class="list-group-item">xmin : {{data['result'][0]['prediction'][0]['xmin']}}</li>
+                      <li class="list-group-item">xmax : {{data['result'][0]['prediction'][0]['xmax']}}</li>
+                      <li class="list-group-item">ymin : {{data['result'][0]['prediction'][0]['ymin']}}</li>
+                      <li class="list-group-item">ymax : {{data['result'][0]['prediction'][0]['ymax']}}</li>
+                    </ul>
+                        </div>
+                </div>
+
 {% endblock %}
+
