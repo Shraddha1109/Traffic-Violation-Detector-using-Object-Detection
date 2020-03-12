@@ -22,6 +22,15 @@ class Admin(Base):
     def __repr__(self):
         # a user friendly way to view our objects in the terminal
         return self.name
+ def __repr__(self):
+        # a user friendly way to view our objects in the terminal
+        return self.name
+
+class ScannedImages(Base):
+    img = db.Column(db.String,)
+    output =  db.Column(db.String)
+    user_id = db.Column(db.Integer,db.ForeignKey('admin.id'))
+    
 
 # class Media(Base):
 #     pass
