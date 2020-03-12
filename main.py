@@ -94,6 +94,21 @@ def showtext(filename):
     text = detect_item(path)
     return render_template('result.html', filename = path, data = json.loads(text))
 
+def gen(camera):
+    while True:
+        frame = camera.get_frame()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
+@app.route('/video_feed')
+def video_feed():
+    return Response(gen(VideoCamera()),mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return '<h1>This page does not exist <a href="/"> back to humanity</a></h1>', 404
+
+
 @app.route('/logout')
 def logout():
     session.clear()
